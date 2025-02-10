@@ -15,12 +15,15 @@ const factDisplay = document.getElementById('fact-display');
 const generateFactButton = document.getElementById('generate-fact');
 const shareFactButton = document.getElementById('share-fact');
 
+// ... (rest of your script.js) 
+
 function displayRandomFact() {
   const randomIndex = Math.floor(Math.random() * facts.length);
   factDisplay.textContent = facts[randomIndex];
-}
 
-generateFactButton.addEventListener('click', displayRandomFact);
+  // Add the 'show' class to trigger the opacity transition
+  factDisplay.classList.add('show'); 
+}
 
 shareFactButton.addEventListener('click', () => {
   const currentFact = factDisplay.textContent;
